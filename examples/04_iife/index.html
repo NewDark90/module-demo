@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+    <style>
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 2rem;
+        }
+        .answer {
+            color: green;
+        }
+        * {
+            padding: 8px;
+        }
+    </style>
+
+    <script src="./pibrary.js"></script>
+  </head>
+  <body>
+
+    <main>
+        <h1>04: Pi questions, Pi answers</h1>  
+
+        <div>
+            When is pi days in the future?
+            <br />
+            <span id="next-days-pi" class="answer"></span>
+        </div>
+
+        <div>
+            <button id="subtract">pi -</button>
+            <input id="number-changer" type="number" value="0"/>
+            <button id="add">pi +</button>
+        </div>
+    </main>
+    
+    <script src="./pi-page.js"></script>
+
+  </body>
+</html>

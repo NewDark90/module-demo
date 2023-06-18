@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+    <style>
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 2rem;
+        }
+        .answer {
+            color: green;
+        }
+        * {
+            padding: 8px;
+        }
+    </style>
+
+    <!--
+        Javascript can do in either the head or the body of the document.
+        There are pros and cons to either.
+    -->
+    <script type="text/javascript">
+        //The Pibrary
+        var pi = 3.141592653589793238462643383279502884197;
+        /* 
+        Same as:
+        window.pi = 3.141592653589793238462643383279502884197;
+        */
+
+        function getPi() {
+            return pi;
+        }
+        /* 
+        Same as:
+        window.getPi = function() {
+            return pi;
+        }
+        */
+
+        function getPiStr(significantDigits) {
+            return pi.toFixed(significantDigits);
+        }
+
+        function addPi(num) {
+            return num + pi;
+        }
+        function subtractPi(num) {
+            return num - pi;
+        }
+
+        function addPiDays(date) {
+            date.setDate(date.getDate() + pi);
+            return date;
+        }
+    </script>
+  </head>
+  <body>
+
+    <main>
+        <h1>02: Pi questions, Pi answers</h1>  
+
+        <div>
+            When is pi days in the future?
+            <br />
+            <span id="next-days-pi" class="answer"></span>
+        </div>
+
+        <div>
+            <button id="subtract">pi -</button>
+            <input id="number-changer" type="number" value="0"/>
+            <button id="add">pi +</button>
+        </div>
+    </main>
+
+    <script type="text/javascript"> 
+        var piDayEl = document.getElementById("next-days-pi");
+        piDayEl.innerHTML = addPiDays(new Date()).toLocaleString();
+        
+        setInterval(() => {
+            piDayEl.innerHTML = addPiDays(new Date()).toLocaleString();
+        }, 1000);
+    </script>
+
+    <script type="text/javascript"> 
+        var addButton = document.getElementById("add");
+        var subtractButton = document.getElementById("subtract");
+        var numberChangerInput = document.getElementById("number-changer");
+
+        addButton.addEventListener("click", () => {
+            numberChangerInput.value = addPi(numberChangerInput.valueAsNumber);
+        })
+        subtractButton.addEventListener("click", () => {
+            numberChangerInput.value = subtractPi(numberChangerInput.valueAsNumber);
+        })
+
+    </script>
+
+  </body>
+</html>
