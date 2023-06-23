@@ -26,3 +26,4 @@ Timeline: 2015+
 
 - Transpiling
 - Polyfills / Ponyfills
+- https://death-to-ie11.com/
