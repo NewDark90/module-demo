@@ -35,27 +35,6 @@
         </div>
     </main>
     
-    <script type="module" src="./pi-page.js"></script>
-    <!-- 
-        If you really need to support older browsers, 
-        use "nomodule" to only load if modules are not unsupported
-    
-        <script nomodule src="./pi-page.es5.js"></script>
-    -->
-
-    <script type="module">
-        //typical import
-        import { getPiStr } from  "./pibrary.js";
-        alert(getPiStr(3));
-
-        if (false) { //some condition, might want to prevent loading some functionality until you need it.
-
-            //ES2020, ES11, Dynamic import
-            var importPromise = import("./pibrary.js");
-            importPromise.then((pibrary) => {
-                console.log(pibrary.getPiStr(3));
-            });
-        }
-    </script>
+    <script src="./build/min/iife/main.js"></script>
   </body>
 </html>
